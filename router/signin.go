@@ -44,7 +44,6 @@ func Signin(w http.ResponseWriter,r *http.Request){
 		},
 	}
 
-	jwt.New(jwt.SigningMethodHS256)
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256,claims)
 	tokenString,err := token.SignedString(jwtKey)
 	if err != nil{
